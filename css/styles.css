@@ -16,7 +16,7 @@ h1 {
 }
 
 #jaunsDarbs {
-    display: none;
+    display: flex;
     justify-content: center;
     background-color:rgb(253, 182, 49)
 }
@@ -29,10 +29,6 @@ h1 {
 
 #dzestDarbu {
     background-color: rgb(253, 182, 49);
-}
-
-#pievienotDarbu {
-
 }
 
 #darbaLapa {
