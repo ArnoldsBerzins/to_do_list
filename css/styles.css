@@ -1,0 +1,18 @@
+h1 {
+    display: flex;
+    justify-content: center;
+    font-size:60px;
+    color:darkorange;
+}
+
+#pievienosanasPoga{
+    display: flex;
+    justify-content: center;
+    border: 1px;
+}
+
+#pievienotDarbu {
+    display: flex;
+    justify-content: center;
+    background-color: orange;
+}
