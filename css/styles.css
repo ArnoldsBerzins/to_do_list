@@ -1,3 +1,7 @@
+body{
+    background-color:wheat;
+}
+
 h1 {
     display: flex;
     justify-content: center;
@@ -11,8 +15,21 @@ h1 {
     border: 1px;
 }
 
-#pievienotDarbu {
+#jaunsDarbs {
     display: flex;
     justify-content: center;
     background-color:rgb(253, 182, 49)
+}
+
+#dzesanasPoga {
+    display: flex;
+    justify-content: center;
+}
+
+#dzestDarbu {
+    background-color: rgb(253, 182, 49);
+}
+
+#pievienotDarbu {
+
 }
