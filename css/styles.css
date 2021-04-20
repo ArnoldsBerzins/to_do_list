@@ -16,7 +16,7 @@ h1 {
 }
 
 #jaunsDarbs {
-    display: flex;
+    display: none;
     justify-content: center;
     background-color:rgb(253, 182, 49)
 }
@@ -24,6 +24,7 @@ h1 {
 #dzesanasPoga {
     display: flex;
     justify-content: center;
+    display: none;
 }
 
 #dzestDarbu {
@@ -32,4 +33,8 @@ h1 {
 
 #pievienotDarbu {
 
+}
+
+#darbaLapa {
+    display: none;
 }
