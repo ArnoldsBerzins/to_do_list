@@ -18,6 +18,9 @@ h1 {
 #jaunsDarbs {
     display: flex;
     justify-content: center;
+    width: 100px;
+    height: 25px;
+    font-size: 15px;
     background-color:rgb(253, 182, 49)
 }
 
@@ -33,7 +36,9 @@ h1 {
 
 #darbaLapa {
     display: none;
+    margin: auto;
     justify-content: center;
+    text-align: center;
     position: fixed;
     z-index: 1;
     border-radius: 5px;
@@ -41,8 +46,12 @@ h1 {
 }
 
 #darbuSaraksts {
-    display: none;
-    flex-direction: line;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.darbs {
     align-items: center;
     border: 3px solid black;
     border-radius: 15px;
@@ -51,10 +60,6 @@ h1 {
     padding: 15px;
     margin: 20px;
     background-color: darkkhaki;
-}
-
-#darbs {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    overflow-wrap: break-word;
+    font-size: 20px;
 }

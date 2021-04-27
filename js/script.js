@@ -1,32 +1,28 @@
 const DARBA_LAPA = document.getElementById('darbaLapa');
 let darbi = [];
 
-window.addEventListener('load', function(e) {
+window.addEventListener('load', (e) => {
     darbi = JSON.parse(localStorage.getItem("darbi") || "[]");
     console.log(darbi)
     render()
 });
 
-document.getElementById("jaunsDarbs").addEventListener("click", function(paradit) {
+document.getElementById("jaunsDarbs").addEventListener("click", () => {
     DARBA_LAPA.style.display = "block";
+    document.getElementById("jaunsDarbs").style.display = "none";
 });
 
-document.getElementById("pievienosanasPoga").addEventListener("click", function(paslept){
-    document.getElementById("pievienosanasPoga").style.display = "none";
-});
-
-document.getElementById('pievienotDarbu').addEventListener('click', function(e) {
-    document.getElementById("pievienosanasPoga").style.display = "flex";
-    document.getElementById("darbuSaraksts").style.display = "flex";
+document.getElementById("pievienotDarbu").addEventListener("click", () => {
     DARBA_LAPA.style.display = "none";
-    let uzd = {Darbs: Darbs.value, Termiņš: Termiņš.value};
+    document.getElementById("jaunsDarbs").style.display = "block";
+    document.getElementById("darbuSaraksts").style.display = "flex";
+ let uzd = {Darbs: Darbs.value, Termiņš: Termiņš.value};
+ Darbs.value = "";
+ Termiņš.value = "";
 
-    Darbs.value = "";
-    Termiņš.value = "";
+ darbi.push(uzd);
 
-    darbi.push(uzd);
-
-    render();
+ render();
 });
 
 function render() {
@@ -43,16 +39,16 @@ function render() {
 
         darbuSaraksts.innerHTML += uzd;
     }
-    localStorage.setItem('Darbi', JSON.stringify(darbi))
+    localStorage.setItem('darbi', JSON.stringify(darbi))
 }
 
 const list = document.querySelector("#darbuSaraksts")
 
-list.addEventListener("click", function(e) {
+list.addEventListener("click", (e) => {
     if(e.target.className == "izdzest") {
         const li = e.target.parentElement;
         li.parentNode.removeChild(li);
         darbi.splice(li, 1);
-        localStorage.setItem("darbi", JSON.stringify("darbi"));
+        localStorage.setItem("darbi", JSON.stringify(darbi));
     }
 });
