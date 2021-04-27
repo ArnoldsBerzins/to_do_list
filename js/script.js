@@ -8,7 +8,7 @@ window.addEventListener('load', function(e) {
 });
 
 document.getElementById("jaunsDarbs").addEventListener("click", function(paradit) {
-    document.getElementById("darbaLapa").style.display = "block";
+    DARBA_LAPA.style.display = "block";
 });
 
 document.getElementById("pievienosanasPoga").addEventListener("click", function(paslept){
@@ -18,7 +18,7 @@ document.getElementById("pievienosanasPoga").addEventListener("click", function(
 document.getElementById('pievienotDarbu').addEventListener('click', function(e) {
     document.getElementById("pievienosanasPoga").style.display = "flex";
     document.getElementById("darbuSaraksts").style.display = "flex";
-    document.getElementById("darbaLapa").style.display = "none";
+    DARBA_LAPA.style.display = "none";
     let uzd = {Darbs: Darbs.value, Termiņš: Termiņš.value};
 
     Darbs.value = "";
@@ -33,14 +33,16 @@ function render() {
     let darbuSaraksts = document.getElementById('darbuSaraksts');
     darbuSaraksts.innerHTML = "";
 
-    for(let i = 1; i < darbi.length; i++) {
+    for(let i = 0; i < darbi.length; i++) {
         let uzd = `
-        <div class="darbs">
-            <h3>Darbs: ${darbi[i].Darbs}</h3>
-            <h4>Termiņš: ${darbi[i].Termiņš}</h4>
-        </div>`;
+            <div class="darbs">
+                <h3>Darbs: ${darbi[i].Darbs}</h3>
+                <h4>Termiņš: ${darbi[i].Termiņš}</h4>
+                <button>Delete</button>
+            </div>`;
 
         darbuSaraksts.innerHTML += uzd;
     }
     localStorage.setItem('Darbi', JSON.stringify(darbi))
 }
+document.getElementById("")
