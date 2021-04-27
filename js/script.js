@@ -35,14 +35,24 @@ function render() {
 
     for(let i = 0; i < darbi.length; i++) {
         let uzd = `
-            <div class="darbs">
+            <li class="darbs">
                 <h3>Darbs: ${darbi[i].Darbs}</h3>
                 <h4>Termiņš: ${darbi[i].Termiņš}</h4>
-                <button>Delete</button>
-            </div>`;
+                <button class="izdzest">Delete</button>
+            </li>`;
 
         darbuSaraksts.innerHTML += uzd;
     }
     localStorage.setItem('Darbi', JSON.stringify(darbi))
 }
-document.getElementById("")
+
+const list = document.querySelector("#darbuSaraksts")
+
+list.addEventListener("click", function(e) {
+    if(e.target.className == "izdzest") {
+        const li = e.target.parentElement;
+        li.parentNode.removeChild(li);
+        darbi.splice(li, 1);
+        localStorage.setItem("darbi", JSON.stringify("darbi"));
+    }
+});
